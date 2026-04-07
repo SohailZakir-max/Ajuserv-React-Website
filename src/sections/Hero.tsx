@@ -58,14 +58,14 @@ const defaultHeroItems: HeroItem[] = [
 interface HeroProps {
   items?: HeroItem[];
   autoRotateInterval?: number;
-  imageAlign?: "center" | "left"; // left = cuts from right side
+  imageAlign?: "center" | "left";
 }
 
 export default function Hero({ items = defaultHeroItems, autoRotateInterval = 5000, imageAlign = "center" }: HeroProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
-  // Auto-rotate every 5 seconds
+  // Auto-rotate
   useEffect(() => {
     if (isPaused) return;
 
@@ -76,8 +76,6 @@ export default function Hero({ items = defaultHeroItems, autoRotateInterval = 50
     return () => clearInterval(interval);
   }, [items.length, autoRotateInterval, isPaused]);
 
-  const heroItems = items;
-
   return (
     <section
       className={`hero ${imageAlign === "left" ? "hero--align-left" : ""}`}
@@ -85,7 +83,7 @@ export default function Hero({ items = defaultHeroItems, autoRotateInterval = 50
       onMouseLeave={() => setIsPaused(false)}
     >
       <div className="hero__accordion">
-        {heroItems.map((item, index) => {
+        {items.map((item, index) => {
           const isActive = index === activeIndex;
 
           return (
@@ -93,11 +91,7 @@ export default function Hero({ items = defaultHeroItems, autoRotateInterval = 50
               key={item.id}
               className={`hero__panel ${isActive ? "hero__panel--active" : ""}`}
               onClick={() => setActiveIndex(index)}
-              initial={false}
-              animate={{
-                flex: isActive ? 4 : 0.5,
-              }}
-              transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
+              data-active={isActive}
             >
               <div
                 className="hero__panel-image"
@@ -117,7 +111,7 @@ export default function Hero({ items = defaultHeroItems, autoRotateInterval = 50
                 <p>{item.subtitle}</p>
               </motion.div>
 
-              {/* Collapsed vertical label */}
+              {/* Collapsed label */}
               <motion.div
                 className="hero__panel-label"
                 initial={false}

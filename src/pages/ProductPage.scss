@@ -293,9 +293,6 @@
   }
 
   &__header {
-    position: sticky;
-    top: 120px;
-
     h2 {
       @include heading-lg;
       margin-bottom: $spacing-md;
@@ -360,9 +357,6 @@
   }
 
   &__header {
-    position: sticky;
-    top: 120px;
-
     h2 {
       @include heading-lg;
       margin-bottom: $spacing-md;
@@ -449,24 +443,25 @@
 }
 
 .impact-card {
-  background: rgba($white, 0.1);
-  border: 1px solid rgba($white, 0.2);
+  background: rgba($white, 0.95);
+  border: 1px solid $gray-200;
   border-radius: $radius-xl;
   padding: $spacing-2xl;
   text-align: center;
   transition: all $transition-base;
-  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 
   &:hover {
-    background: rgba($white, 0.15);
     transform: translateY(-4px);
+    border-color: $gray-300;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
   }
 
   &__value {
     display: block;
     font-size: $font-size-3xl;
-    font-weight: 700;
-    color: $white;
+    font-weight: 800;
+    color: $primary;
     margin-bottom: $spacing-sm;
 
     @include md {
@@ -476,7 +471,8 @@
 
   &__label {
     font-size: $font-size-base;
-    color: rgba($white, 0.8);
+    color: $gray-700;
+    line-height: $leading-relaxed;
   }
 }
 
@@ -490,7 +486,7 @@
   }
 
   &__content {
-    background: linear-gradient(135deg, $primary 0%, #004080 100%);
+    background: linear-gradient(135deg, #1e3a5f 0%, #0d2137 100%);
     border-radius: $radius-2xl;
     padding: $spacing-4xl $spacing-xl;
     text-align: center;

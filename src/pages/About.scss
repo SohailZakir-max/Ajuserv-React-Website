@@ -1,0 +1,290 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.about-page {
+  .badge {
+    @include badge;
+    margin-bottom: $spacing-lg;
+
+    &--primary {
+      background: rgba($primary, 0.1);
+      color: $primary;
+      border: 1px solid rgba($primary, 0.2);
+    }
+  }
+}
+
+// Hero Section
+.about-hero {
+  position: relative;
+  padding: $spacing-3xl $spacing-lg;
+  padding-top: calc($spacing-3xl + 80px);
+  background: linear-gradient(135deg, $primary 0%, #004080 100%);
+  color: $white;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at 50% 50%, rgba($white, 0.1) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  &__content {
+    @include container;
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  &__badge {
+    display: inline-flex;
+    padding: $spacing-xs $spacing-lg;
+    background: rgba($white, 0.15);
+    border: 1px solid rgba($white, 0.25);
+    border-radius: $radius-full;
+    font-size: $font-size-sm;
+    font-weight: 600;
+    margin-bottom: $spacing-xl;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    backdrop-filter: blur(10px);
+  }
+
+  h1 {
+    font-size: $font-size-3xl;
+    font-weight: 800;
+    line-height: $leading-tight;
+    margin-bottom: $spacing-lg;
+
+    @include md {
+      font-size: $font-size-4xl;
+    }
+
+    @include lg {
+      font-size: $font-size-5xl;
+    }
+  }
+
+  &__description {
+    font-size: $font-size-lg;
+    color: rgba($white, 0.9);
+    line-height: $leading-relaxed;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+}
+
+// Sections
+.about-section {
+  @include section;
+
+  &--mission {
+    background: $white;
+    text-align: center;
+  }
+
+  &--values {
+    background: $gray-100;
+  }
+
+  &--stats {
+    background: linear-gradient(135deg, #1e3a5f 0%, #0d2137 100%);
+  }
+
+  &__container {
+    @include container;
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: $spacing-4xl;
+
+    h2 {
+      @include heading-lg;
+      margin-bottom: $spacing-md;
+    }
+  }
+
+  &__subtitle {
+    font-size: $font-size-lg;
+    color: $text-secondary;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: $leading-relaxed;
+  }
+}
+
+// Values Grid
+.values-grid {
+  display: grid;
+  gap: $spacing-lg;
+
+  @include md {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include lg {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.value-card {
+  background: $white;
+  border: 1px solid $gray-200;
+  border-radius: $radius-xl;
+  padding: $spacing-2xl;
+  text-align: center;
+  transition: all $transition-base;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  h3 {
+    font-size: $font-size-xl;
+    font-weight: 700;
+    color: $primary;
+    margin-bottom: $spacing-sm;
+  }
+
+  p {
+    color: $gray-600;
+    line-height: $leading-relaxed;
+    font-size: $font-size-sm;
+  }
+}
+
+// Stats Grid
+.stats-grid {
+  display: grid;
+  gap: $spacing-lg;
+
+  @include md {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.stat-card {
+  background: rgba($white, 0.1);
+  border: 1px solid rgba($white, 0.2);
+  border-radius: $radius-xl;
+  padding: $spacing-2xl;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  transition: all $transition-base;
+
+  &:hover {
+    background: rgba($white, 0.15);
+    transform: translateY(-4px);
+  }
+
+  &__value {
+    display: block;
+    font-size: $font-size-3xl;
+    font-weight: 700;
+    color: $white;
+    margin-bottom: $spacing-sm;
+
+    @include md {
+      font-size: $font-size-4xl;
+    }
+  }
+
+  &__label {
+    font-size: $font-size-base;
+    color: rgba($white, 0.8);
+  }
+}
+
+// CTA Section
+.about-cta {
+  @include section;
+  background: $gray-100;
+
+  &__container {
+    @include container;
+  }
+
+  &__content {
+    background: linear-gradient(135deg, $primary 0%, #004080 100%);
+    border-radius: $radius-2xl;
+    padding: $spacing-4xl $spacing-xl;
+    text-align: center;
+    color: $white;
+    position: relative;
+    overflow: hidden;
+
+    @include md {
+      padding: $spacing-5xl $spacing-4xl;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(ellipse at 50% 50%, rgba($white, 0.1) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    h2 {
+      font-size: $font-size-2xl;
+      font-weight: 700;
+      margin-bottom: $spacing-md;
+      position: relative;
+
+      @include md {
+        font-size: $font-size-3xl;
+      }
+    }
+
+    p {
+      font-size: $font-size-lg;
+      color: rgba($white, 0.9);
+      margin-bottom: $spacing-2xl;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+    }
+  }
+
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-sm;
+    background: $white;
+    color: $primary;
+    padding: $spacing-md $spacing-2xl;
+    border-radius: $radius-lg;
+    font-weight: 600;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: all $transition-base;
+    position: relative;
+
+    svg {
+      width: 20px;
+      height: 20px;
+      transition: transform $transition-base;
+    }
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+
+      svg {
+        transform: translateX(4px);
+      }
+    }
+  }
+}

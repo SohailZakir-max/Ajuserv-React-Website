@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import "./ExploreSection.scss";
 import HomeProducts from "../assets/images/Home-Products.jpg";
-import HomeServices from "../assets/images/Home-Services.png";
+import HomeServices from "../assets/images/Home-Services.jpg";
 
 const exploreItems = [
   {

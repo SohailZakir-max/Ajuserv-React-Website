@@ -1,0 +1,129 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.legal-page {
+  min-height: 100vh;
+}
+
+// Hero Section
+.legal-hero {
+  position: relative;
+  padding: $spacing-3xl $spacing-lg;
+  padding-top: calc($spacing-3xl + 80px);
+  background: linear-gradient(135deg, #1e3a5f 0%, #0d2137 100%);
+  color: $white;
+  text-align: center;
+
+  &__content {
+    @include container;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: $font-size-3xl;
+    font-weight: 800;
+    margin-bottom: $spacing-md;
+
+    @include md {
+      font-size: $font-size-4xl;
+    }
+  }
+
+  &__date {
+    font-size: $font-size-base;
+    color: rgba($white, 0.7);
+  }
+}
+
+// Content Section
+.legal-content {
+  padding: $spacing-4xl $spacing-lg;
+  background: $white;
+
+  &__container {
+    @include container;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  h2 {
+    font-size: $font-size-xl;
+    font-weight: 700;
+    color: $gray-900;
+    margin-top: $spacing-3xl;
+    margin-bottom: $spacing-lg;
+    padding-bottom: $spacing-sm;
+    border-bottom: 2px solid $gray-200;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+
+    @include md {
+      font-size: $font-size-2xl;
+    }
+  }
+
+  h3 {
+    font-size: $font-size-lg;
+    font-weight: 600;
+    color: $gray-800;
+    margin-top: $spacing-xl;
+    margin-bottom: $spacing-md;
+  }
+
+  p {
+    font-size: $font-size-base;
+    color: $gray-700;
+    line-height: $leading-relaxed;
+    margin-bottom: $spacing-md;
+  }
+
+  ul {
+    margin-bottom: $spacing-lg;
+    padding-left: $spacing-xl;
+
+    li {
+      font-size: $font-size-base;
+      color: $gray-700;
+      line-height: $leading-relaxed;
+      margin-bottom: $spacing-sm;
+      position: relative;
+
+      &::marker {
+        color: $primary;
+      }
+
+      strong {
+        color: $gray-900;
+      }
+    }
+  }
+
+  a {
+    color: $primary;
+    text-decoration: underline;
+    transition: color $transition-fast;
+
+    &:hover {
+      color: darken($primary, 10%);
+    }
+  }
+}
+
+.legal-contact {
+  background: $gray-50;
+  border: 1px solid $gray-200;
+  border-radius: $radius-lg;
+  padding: $spacing-xl;
+  margin-top: $spacing-lg;
+
+  p {
+    margin-bottom: $spacing-xs;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

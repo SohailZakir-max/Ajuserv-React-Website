@@ -12,6 +12,9 @@ const Platforms = lazy(() => import("./pages/Platforms"));
 const ProductPage = lazy(() => import("./pages/ProductPage"));
 const Services = lazy(() => import("./pages/Services"));
 const Solutions = lazy(() => import("./pages/Solutions"));
+const About = lazy(() => import("./pages/About"));
+const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
+const TermsOfService = lazy(() => import("./pages/TermsOfService"));
 const Contact = lazy(() => import("./pages/Contact"));
 
 // Loading fallback with skeleton
@@ -40,6 +43,9 @@ function App() {
             <Route path="/services/workplace-transformation" element={<ProductPage product={serviceDetails["workplace-transformation"]} />} />
             <Route path="/services/staff-augmentation" element={<ProductPage product={serviceDetails["staff-augmentation"]} />} />
             <Route path="/solutions" element={<Solutions />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-of-service" element={<TermsOfService />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </Suspense>

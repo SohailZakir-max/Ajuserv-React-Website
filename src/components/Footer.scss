@@ -20,14 +20,14 @@
 
   &__container {
     @include container;
-    padding-top: $spacing-5xl;
-    padding-bottom: $spacing-xl;
+    padding-top: $spacing-2xl;
+    padding-bottom: $spacing-md;
   }
 
   &__main {
     display: grid;
-    gap: $spacing-4xl;
-    margin-bottom: $spacing-4xl;
+    gap: $spacing-xl;
+    margin-bottom: $spacing-xl;
 
     @include md {
       grid-template-columns: 1.5fr 2fr;

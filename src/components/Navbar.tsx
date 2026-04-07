@@ -25,7 +25,7 @@ export default function Navbar() {
     { to: "/", label: "Home" },
     { to: "/platforms", label: "Products" },
     { to: "/services", label: "Services" },
-    { to: "/solutions", label: "Solutions" },
+    { to: "/about", label: "About" },
   ];
 
   return (
