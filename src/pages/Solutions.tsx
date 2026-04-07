@@ -7,7 +7,7 @@ import "./Solutions.scss";
 // Import solution images
 import finlinkImg from "../assets/images/Solutions/Finlink-Solutions2.png";
 import coursifyImg from "../assets/images/Solutions/Coursify-Solutions1.png";
-import QualvoImg from "../assets/images/Solutions/Qualvo-Solutions3.png";
+import QualvoImg from "../assets/images/Solutions/Qualev-Solutions3.png";
 import facentraImg from "../assets/images/Solutions/Facentra-Solutions4.png";
 
 const solutionHeroItems: HeroItem[] = [

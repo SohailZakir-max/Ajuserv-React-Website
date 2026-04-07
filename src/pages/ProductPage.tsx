@@ -7,7 +7,7 @@ import "./ProductPage.scss";
 // Import product background images
 import coursifyBG from "../assets/images/BG-Solution/Coursify-BG.png";
 import finlinkBG from "../assets/images/BG-Solution/Finlink-BG.png";
-import QualvoBG from "../assets/images/BG-Solution/Qualvo-BG.png";
+import QualvoBG from "../assets/images/BG-Solution/Qualev-BG.png";
 import facentraBG from "../assets/images/BG-Solution/Facentra-BG.png";
 
 // Import service background images

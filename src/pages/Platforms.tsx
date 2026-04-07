@@ -9,7 +9,7 @@ import "./Platforms.scss";
 // Import product images
 import coursifyImg from "../assets/images/products/Coursify-Product1.png";
 import finlinkImg from "../assets/images/products/Finlink-Product2.png";
-import QualvoImg from "../assets/images/products/Qualvo-Product3.png";
+import QualvoImg from "../assets/images/products/Qualev-Product3.png";
 import facentraImg from "../assets/images/products/Facentra-Product4.png";
 
 const platformHeroItems: HeroItem[] = [
