@@ -64,7 +64,7 @@ const solutionsData = {
     name: "Quality Automation",
     description:
       "AI-powered autonomous testing with auto-generated test cases, self-healing scripts, and seamless CI/CD integration.",
-    platform: "qualev",
+    platform: "Qualvo",
     problems: [
       "Manual testing delays releases",
       "Test scripts break frequently",
@@ -175,36 +175,247 @@ This solution is powered by our **${products[solution.platform].name}** platform
 const keywordMappings = {
   // Product keywords with variations and typos
   products: {
-    coursify: ["coursify", "course", "coursfy", "corsefy", "learning platform", "lms platform", "smart learning", "education platform"],
-    finlink: ["finlink", "fin link", "finlnk", "lending platform", "loan platform", "digital lending", "credit platform", "aa platform", "account aggregator"],
-    qualev: ["qualev", "qualav", "quality", "testing platform", "test automation", "qa platform", "autonomous testing"],
-    facentra: ["facentra", "facentre", "face recognition", "workforce platform", "attendance system", "geofencing", "employee tracking"],
+    coursify: [
+      "coursify",
+      "course",
+      "coursfy",
+      "corsefy",
+      "learning platform",
+      "lms platform",
+      "smart learning",
+      "education platform",
+    ],
+    finlink: [
+      "finlink",
+      "fin link",
+      "finlnk",
+      "lending platform",
+      "loan platform",
+      "digital lending",
+      "credit platform",
+      "aa platform",
+      "account aggregator",
+    ],
+    Qualvo: [
+      "Qualvo",
+      "qualav",
+      "quality",
+      "testing platform",
+      "test automation",
+      "qa platform",
+      "autonomous testing",
+    ],
+    facentra: [
+      "facentra",
+      "facentre",
+      "face recognition",
+      "workforce platform",
+      "attendance system",
+      "geofencing",
+      "employee tracking",
+    ],
   },
   // Service keywords with variations
   services: {
-    "fullstack-development": ["fullstack", "full stack", "full-stack", "web development", "mobile development", "react", "angular", "django", "node", "nodejs", "frontend", "backend", "app development", "application development", "software development"],
-    "ai-genai": ["ai", "genai", "gen ai", "artificial intelligence", "machine learning", "ml", "chatgpt", "llm", "deep learning", "neural network", "nlp", "natural language", "computer vision", "predictive"],
-    "data-cloud": ["data", "cloud", "aws", "azure", "gcp", "google cloud", "data engineering", "data lake", "data warehouse", "etl", "migration", "cloud migration", "big data", "analytics", "database"],
-    "infra-security": ["security", "infra", "infrastructure", "devsecops", "cybersecurity", "cyber security", "penetration", "compliance", "soc", "firewall", "encryption", "vulnerability"],
-    "elearning": ["elearning", "e-learning", "e learning", "online learning", "digital learning", "training platform", "corporate training", "employee training"],
-    "lowcode-nocode": ["lowcode", "low code", "low-code", "nocode", "no code", "no-code", "rapid development", "citizen developer", "power platform", "outsystems", "mendix"],
-    "workplace-transformation": ["workplace", "digital workplace", "microsoft 365", "m365", "office 365", "sharepoint", "teams", "collaboration", "productivity"],
-    "staff-augmentation": ["staff augmentation", "staffing", "talent", "hiring", "recruitment", "resource", "contract", "consultant", "outsourcing", "dedicated team"],
+    "fullstack-development": [
+      "fullstack",
+      "full stack",
+      "full-stack",
+      "web development",
+      "mobile development",
+      "react",
+      "angular",
+      "django",
+      "node",
+      "nodejs",
+      "frontend",
+      "backend",
+      "app development",
+      "application development",
+      "software development",
+    ],
+    "ai-genai": [
+      "ai",
+      "genai",
+      "gen ai",
+      "artificial intelligence",
+      "machine learning",
+      "ml",
+      "chatgpt",
+      "llm",
+      "deep learning",
+      "neural network",
+      "nlp",
+      "natural language",
+      "computer vision",
+      "predictive",
+    ],
+    "data-cloud": [
+      "data",
+      "cloud",
+      "aws",
+      "azure",
+      "gcp",
+      "google cloud",
+      "data engineering",
+      "data lake",
+      "data warehouse",
+      "etl",
+      "migration",
+      "cloud migration",
+      "big data",
+      "analytics",
+      "database",
+    ],
+    "infra-security": [
+      "security",
+      "infra",
+      "infrastructure",
+      "devsecops",
+      "cybersecurity",
+      "cyber security",
+      "penetration",
+      "compliance",
+      "soc",
+      "firewall",
+      "encryption",
+      "vulnerability",
+    ],
+    elearning: [
+      "elearning",
+      "e-learning",
+      "e learning",
+      "online learning",
+      "digital learning",
+      "training platform",
+      "corporate training",
+      "employee training",
+    ],
+    "lowcode-nocode": [
+      "lowcode",
+      "low code",
+      "low-code",
+      "nocode",
+      "no code",
+      "no-code",
+      "rapid development",
+      "citizen developer",
+      "power platform",
+      "outsystems",
+      "mendix",
+    ],
+    "workplace-transformation": [
+      "workplace",
+      "digital workplace",
+      "microsoft 365",
+      "m365",
+      "office 365",
+      "sharepoint",
+      "teams",
+      "collaboration",
+      "productivity",
+    ],
+    "staff-augmentation": [
+      "staff augmentation",
+      "staffing",
+      "talent",
+      "hiring",
+      "recruitment",
+      "resource",
+      "contract",
+      "consultant",
+      "outsourcing",
+      "dedicated team",
+    ],
   },
   // Solution keywords
   solutions: {
-    "digital-lending": ["digital lending", "lending solution", "loan solution", "credit solution", "nbfc", "fintech lending"],
-    "smart-learning": ["smart learning", "learning solution", "training solution", "education solution", "corporate learning"],
-    "quality-automation": ["quality automation", "test automation", "qa automation", "automated testing", "continuous testing"],
-    "workforce-management": ["workforce management", "attendance management", "employee management", "field force", "field workforce"],
+    "digital-lending": [
+      "digital lending",
+      "lending solution",
+      "loan solution",
+      "credit solution",
+      "nbfc",
+      "fintech lending",
+    ],
+    "smart-learning": [
+      "smart learning",
+      "learning solution",
+      "training solution",
+      "education solution",
+      "corporate learning",
+    ],
+    "quality-automation": [
+      "quality automation",
+      "test automation",
+      "qa automation",
+      "automated testing",
+      "continuous testing",
+    ],
+    "workforce-management": [
+      "workforce management",
+      "attendance management",
+      "employee management",
+      "field force",
+      "field workforce",
+    ],
   },
   // Company/general keywords
   company: {
-    about: ["about", "company", "who are you", "what is ajuserv", "ajuserv", "about us", "tell me about", "introduction"],
-    contact: ["contact", "reach", "email", "phone", "address", "location", "office", "demo", "meeting", "schedule", "call"],
-    pricing: ["price", "pricing", "cost", "quote", "budget", "how much", "rates", "fee"],
-    greetings: ["hello", "hi", "hey", "good morning", "good afternoon", "good evening", "greetings", "howdy", "hola"],
-    help: ["help", "assist", "support", "guide", "how to", "what can you", "options", "menu"],
+    about: [
+      "about",
+      "company",
+      "who are you",
+      "what is ajuserv",
+      "ajuserv",
+      "about us",
+      "tell me about",
+      "introduction",
+    ],
+    contact: [
+      "contact",
+      "reach",
+      "email",
+      "phone",
+      "address",
+      "location",
+      "office",
+      "demo",
+      "meeting",
+      "schedule",
+      "call",
+    ],
+    pricing: [
+      "price",
+      "pricing",
+      "cost",
+      "quote",
+      "budget",
+      "how much",
+      "rates",
+      "fee",
+    ],
+    greetings: [
+      "hello",
+      "hi",
+      "hey",
+      "good morning",
+      "good afternoon",
+      "good evening",
+      "greetings",
+      "howdy",
+      "hola",
+    ],
+    help: [
+      "help",
+      "assist",
+      "support",
+      "guide",
+      "how to",
+      "what can you",
+      "options",
+      "menu",
+    ],
     thanks: ["thank", "thanks", "thank you", "appreciate", "grateful"],
   },
 };
@@ -222,9 +433,9 @@ const calculateMatchScore = (query: string, keywords: string[]): number => {
     // Individual word matches
     const keywordWords = keyword.split(/\s+/);
     for (const kw of keywordWords) {
-      if (words.some(w => w === kw)) {
+      if (words.some((w) => w === kw)) {
         score += 5;
-      } else if (words.some(w => w.includes(kw) || kw.includes(w))) {
+      } else if (words.some((w) => w.includes(kw) || kw.includes(w))) {
         score += 2; // Partial match
       }
     }
@@ -234,7 +445,9 @@ const calculateMatchScore = (query: string, keywords: string[]): number => {
 };
 
 // Find best match using scoring system
-const findBestMatch = (query: string): { type: string; key: string; score: number } | null => {
+const findBestMatch = (
+  query: string,
+): { type: string; key: string; score: number } | null => {
   let bestMatch: { type: string; key: string; score: number } | null = null;
 
   // Check products
@@ -274,7 +487,11 @@ const findResponse = (query: string): string => {
   }
 
   // Check for greetings first (high priority)
-  if (keywordMappings.company.greetings.some(g => lowerQuery.includes(g) || lowerQuery === g)) {
+  if (
+    keywordMappings.company.greetings.some(
+      (g) => lowerQuery.includes(g) || lowerQuery === g,
+    )
+  ) {
     return `Hello! Welcome to **Ajuserv**! 👋
 
 I'm here to help you learn about our offerings:
@@ -282,7 +499,7 @@ I'm here to help you learn about our offerings:
 **🚀 Products:**
 • **Coursify** - AI-Enabled Smart Learning Platform
 • **Finlink** - AA-Powered Digital Lending Platform
-• **Qualev** - AI-Driven Autonomous Testing Platform
+• **Qualvo** - AI-Driven Autonomous Testing Platform
 • **Facentra** - Geofenced Workforce Management System
 
 **💼 Services:**
@@ -298,12 +515,12 @@ I'm here to help you learn about our offerings:
   }
 
   // Check for thanks
-  if (keywordMappings.company.thanks.some(t => lowerQuery.includes(t))) {
+  if (keywordMappings.company.thanks.some((t) => lowerQuery.includes(t))) {
     return `You're welcome! 😊 Is there anything else you'd like to know about Ajuserv's products, services, or solutions?`;
   }
 
   // Check for help queries
-  if (keywordMappings.company.help.some(h => lowerQuery.includes(h))) {
+  if (keywordMappings.company.help.some((h) => lowerQuery.includes(h))) {
     return `**How can I help you?** 🤖
 
 I can provide detailed information about:
@@ -311,7 +528,7 @@ I can provide detailed information about:
 **Ask about Products:**
 • "Tell me about Coursify"
 • "What is Finlink?"
-• "Explain Qualev"
+• "Explain Qualvo"
 • "What does Facentra do?"
 
 **Ask about Services:**
@@ -333,7 +550,7 @@ Just type your question naturally - I'll understand! 😊`;
   }
 
   // Check for about/company queries
-  if (keywordMappings.company.about.some(a => lowerQuery.includes(a))) {
+  if (keywordMappings.company.about.some((a) => lowerQuery.includes(a))) {
     return `**About Ajuserv** 🏢
 
 Ajuserv is a technology company delivering **AI-Powered Platforms** with **Enterprise-Scale Execution**.
@@ -343,7 +560,7 @@ Ajuserv is a technology company delivering **AI-Powered Platforms** with **Enter
 **Products/Platforms:**
 • **Coursify** - Smart Learning Platform for enterprise training
 • **Finlink** - Digital Lending Platform using Account Aggregator
-• **Qualev** - Autonomous Testing Platform with AI
+• **Qualvo** - Autonomous Testing Platform with AI
 • **Facentra** - Workforce Management with face recognition
 
 **Services:**
@@ -361,7 +578,7 @@ Would you like to know more about any specific product or service?`;
   }
 
   // Check for contact queries
-  if (keywordMappings.company.contact.some(c => lowerQuery.includes(c))) {
+  if (keywordMappings.company.contact.some((c) => lowerQuery.includes(c))) {
     return `**Contact Ajuserv** 📞
 
 **Email:** info@ajuserv.com
@@ -380,7 +597,7 @@ Is there anything specific you'd like to discuss? I can provide more details abo
   }
 
   // Check for pricing queries
-  if (keywordMappings.company.pricing.some(p => lowerQuery.includes(p))) {
+  if (keywordMappings.company.pricing.some((p) => lowerQuery.includes(p))) {
     return `**Pricing Information** 💰
 
 Our pricing is customized based on:
@@ -399,8 +616,12 @@ Would you like to know more about any specific product or service before discuss
   }
 
   // Check for list queries (all products/services/solutions)
-  if (lowerQuery.includes("all product") || lowerQuery.includes("list product") ||
-      (lowerQuery.includes("product") && (lowerQuery.includes("show") || lowerQuery.includes("what")))) {
+  if (
+    lowerQuery.includes("all product") ||
+    lowerQuery.includes("list product") ||
+    (lowerQuery.includes("product") &&
+      (lowerQuery.includes("show") || lowerQuery.includes("what")))
+  ) {
     let response = `**Our Products/Platforms:** 🚀\n\n`;
     for (const [, product] of Object.entries(products)) {
       response += `**${product.name}**\n`;
@@ -412,8 +633,14 @@ Would you like to know more about any specific product or service before discuss
     return response;
   }
 
-  if (lowerQuery.includes("all service") || lowerQuery.includes("list service") ||
-      (lowerQuery.includes("service") && (lowerQuery.includes("show") || lowerQuery.includes("what") || lowerQuery.includes("offer")))) {
+  if (
+    lowerQuery.includes("all service") ||
+    lowerQuery.includes("list service") ||
+    (lowerQuery.includes("service") &&
+      (lowerQuery.includes("show") ||
+        lowerQuery.includes("what") ||
+        lowerQuery.includes("offer")))
+  ) {
     let response = `**Our Services:** 💼\n\n`;
     for (const [, service] of Object.entries(serviceDetails)) {
       response += `**${service.name}**\n`;
@@ -424,8 +651,12 @@ Would you like to know more about any specific product or service before discuss
     return response;
   }
 
-  if (lowerQuery.includes("all solution") || lowerQuery.includes("list solution") ||
-      (lowerQuery.includes("solution") && (lowerQuery.includes("show") || lowerQuery.includes("what")))) {
+  if (
+    lowerQuery.includes("all solution") ||
+    lowerQuery.includes("list solution") ||
+    (lowerQuery.includes("solution") &&
+      (lowerQuery.includes("show") || lowerQuery.includes("what")))
+  ) {
     let response = `**Our Solutions:** 💡\n\n`;
     for (const [, solution] of Object.entries(solutionsData)) {
       response += `**${solution.name}**\n`;
@@ -442,11 +673,17 @@ Would you like to know more about any specific product or service before discuss
   if (bestMatch && bestMatch.score >= 5) {
     switch (bestMatch.type) {
       case "product":
-        return getProductResponse(products[bestMatch.key as keyof typeof products]);
+        return getProductResponse(
+          products[bestMatch.key as keyof typeof products],
+        );
       case "service":
-        return getServiceResponse(serviceDetails[bestMatch.key as keyof typeof serviceDetails]);
+        return getServiceResponse(
+          serviceDetails[bestMatch.key as keyof typeof serviceDetails],
+        );
       case "solution":
-        return getSolutionResponse(solutionsData[bestMatch.key as keyof typeof solutionsData]);
+        return getSolutionResponse(
+          solutionsData[bestMatch.key as keyof typeof solutionsData],
+        );
     }
   }
 
@@ -457,10 +694,12 @@ Would you like to know more about any specific product or service before discuss
         const product = products[bestMatch.key as keyof typeof products];
         return `I think you might be asking about **${product.name}**. Is that correct?\n\n${getProductResponse(product)}`;
       case "service":
-        const service = serviceDetails[bestMatch.key as keyof typeof serviceDetails];
+        const service =
+          serviceDetails[bestMatch.key as keyof typeof serviceDetails];
         return `I think you might be asking about **${service.name}**. Is that correct?\n\n${getServiceResponse(service)}`;
       case "solution":
-        const solution = solutionsData[bestMatch.key as keyof typeof solutionsData];
+        const solution =
+          solutionsData[bestMatch.key as keyof typeof solutionsData];
         return `I think you might be asking about **${solution.name}**. Is that correct?\n\n${getSolutionResponse(solution)}`;
     }
   }
@@ -470,7 +709,7 @@ Would you like to know more about any specific product or service before discuss
 
 **You can ask me about:**
 
-**Products:** Coursify, Finlink, Qualev, Facentra
+**Products:** Coursify, Finlink, Qualvo, Facentra
 **Services:** AI & GenAI, Full Stack, Cloud, Security, and more
 **Solutions:** Digital Lending, Smart Learning, Quality Automation
 

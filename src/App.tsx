@@ -29,19 +29,69 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/platforms" element={<Platforms />} />
-            <Route path="/platforms/finlink" element={<ProductPage product={products.finlink} />} />
-            <Route path="/platforms/coursify" element={<ProductPage product={products.coursify} />} />
-            <Route path="/platforms/qualev" element={<ProductPage product={products.qualev} />} />
-            <Route path="/platforms/facentra" element={<ProductPage product={products.facentra} />} />
+            <Route
+              path="/platforms/finlink"
+              element={<ProductPage product={products.finlink} />}
+            />
+            <Route
+              path="/platforms/coursify"
+              element={<ProductPage product={products.coursify} />}
+            />
+            <Route
+              path="/platforms/Qualvo"
+              element={<ProductPage product={products.Qualvo} />}
+            />
+            <Route
+              path="/platforms/facentra"
+              element={<ProductPage product={products.facentra} />}
+            />
             <Route path="/services" element={<Services />} />
-            <Route path="/services/fullstack-development" element={<ProductPage product={serviceDetails["fullstack-development"]} />} />
-            <Route path="/services/ai-genai" element={<ProductPage product={serviceDetails["ai-genai"]} />} />
-            <Route path="/services/data-cloud" element={<ProductPage product={serviceDetails["data-cloud"]} />} />
-            <Route path="/services/infra-security" element={<ProductPage product={serviceDetails["infra-security"]} />} />
-            <Route path="/services/elearning" element={<ProductPage product={serviceDetails["elearning"]} />} />
-            <Route path="/services/lowcode-nocode" element={<ProductPage product={serviceDetails["lowcode-nocode"]} />} />
-            <Route path="/services/workplace-transformation" element={<ProductPage product={serviceDetails["workplace-transformation"]} />} />
-            <Route path="/services/staff-augmentation" element={<ProductPage product={serviceDetails["staff-augmentation"]} />} />
+            <Route
+              path="/services/fullstack-development"
+              element={
+                <ProductPage
+                  product={serviceDetails["fullstack-development"]}
+                />
+              }
+            />
+            <Route
+              path="/services/ai-genai"
+              element={<ProductPage product={serviceDetails["ai-genai"]} />}
+            />
+            <Route
+              path="/services/data-cloud"
+              element={<ProductPage product={serviceDetails["data-cloud"]} />}
+            />
+            <Route
+              path="/services/infra-security"
+              element={
+                <ProductPage product={serviceDetails["infra-security"]} />
+              }
+            />
+            <Route
+              path="/services/elearning"
+              element={<ProductPage product={serviceDetails["elearning"]} />}
+            />
+            <Route
+              path="/services/lowcode-nocode"
+              element={
+                <ProductPage product={serviceDetails["lowcode-nocode"]} />
+              }
+            />
+            <Route
+              path="/services/workplace-transformation"
+              element={
+                <ProductPage
+                  product={serviceDetails["workplace-transformation"]}
+                />
+              }
+            />
+            <Route
+              path="/services/staff-augmentation"
+              element={
+                <ProductPage product={serviceDetails["staff-augmentation"]} />
+              }
+            />
             <Route path="/solutions" element={<Solutions />} />
             <Route path="/about" element={<About />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />

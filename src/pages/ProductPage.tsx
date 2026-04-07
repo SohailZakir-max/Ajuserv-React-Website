@@ -7,7 +7,7 @@ import "./ProductPage.scss";
 // Import product background images
 import coursifyBG from "../assets/images/BG-Solution/Coursify-BG.png";
 import finlinkBG from "../assets/images/BG-Solution/Finlink-BG.png";
-import qualevBG from "../assets/images/BG-Solution/Qualev-BG.png";
+import QualvoBG from "../assets/images/BG-Solution/Qualvo-BG.png";
 import facentraBG from "../assets/images/BG-Solution/Facentra-BG.png";
 
 // Import service background images
@@ -24,7 +24,7 @@ import staffAugBG from "../assets/images/BG-Service/Staff-BG.png";
 const productImages: { [key: string]: string } = {
   Coursify: coursifyBG,
   Finlink: finlinkBG,
-  Qualev: qualevBG,
+  Qualvo: QualvoBG,
   Facentra: facentraBG,
   "Full Stack Development": fullstackBG,
   "AI & GenAI": aiGenAIBG,
@@ -46,7 +46,10 @@ export default function ProductPage({ product }: ProductPageProps) {
   return (
     <div className="product-page">
       {/* Hero Section */}
-      <section className="product-hero" style={{ '--bg-image': `url(${productImage})` } as React.CSSProperties}>
+      <section
+        className="product-hero"
+        style={{ "--bg-image": `url(${productImage})` } as React.CSSProperties}
+      >
         <div className="product-hero__content">
           <motion.div
             className="product-hero__text"
@@ -60,7 +63,12 @@ export default function ProductPage({ product }: ProductPageProps) {
             <div className="product-hero__buttons">
               <Link to="/contact" className="btn-primary">
                 Request Demo
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
                   <line x1="5" y1="12" x2="19" y2="12" />
                   <polyline points="12 5 19 12 12 19" />
                 </svg>
@@ -123,7 +131,10 @@ export default function ProductPage({ product }: ProductPageProps) {
       </section>
 
       {/* Features Section */}
-      <section id="features" className="product-section product-section--features">
+      <section
+        id="features"
+        className="product-section product-section--features"
+      >
         <div className="product-section__container">
           <div className="features-layout">
             <motion.div
@@ -149,7 +160,12 @@ export default function ProductPage({ product }: ProductPageProps) {
                   viewport={{ once: true }}
                 >
                   <div className="feature-item__icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    >
                       <polyline points="20 6 9 17 4 12" />
                     </svg>
                   </div>
@@ -173,7 +189,9 @@ export default function ProductPage({ product }: ProductPageProps) {
           >
             <span className="badge badge--light">Results</span>
             <h2>Business Impact</h2>
-            <p className="product-section__subtitle product-section__subtitle--light">Measurable outcomes that drive ROI</p>
+            <p className="product-section__subtitle product-section__subtitle--light">
+              Measurable outcomes that drive ROI
+            </p>
           </motion.div>
 
           <div className="impact-grid">
@@ -205,11 +223,19 @@ export default function ProductPage({ product }: ProductPageProps) {
             viewport={{ once: true }}
           >
             <h2>Ready to Get Started with {product.name}?</h2>
-            <p>Let our team show you how {product.name} can transform your operations</p>
+            <p>
+              Let our team show you how {product.name} can transform your
+              operations
+            </p>
             <div className="product-cta__buttons">
               <Link to="/contact" className="cta-button cta-button--primary">
                 Schedule a Demo
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
                   <line x1="5" y1="12" x2="19" y2="12" />
                   <polyline points="12 5 19 12 12 19" />
                 </svg>

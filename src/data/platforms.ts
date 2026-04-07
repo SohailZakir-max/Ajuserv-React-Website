@@ -2,21 +2,21 @@ export const platforms = [
   {
     name: "Coursify",
     desc: "AI-enabled smart learning platform",
-    slug: "coursify"
+    slug: "coursify",
   },
   {
     name: "Finlink",
     desc: "AA-powered digital lending platform",
-    slug: "finlink"
+    slug: "finlink",
   },
   {
-    name: "Qualev",
+    name: "Qualvo",
     desc: "AI auto testing platform",
-    slug: "qualev"
+    slug: "Qualvo",
   },
   {
     name: "Facentra",
     desc: "Geofenced workforce management system",
-    slug: "facentra"
+    slug: "facentra",
   },
 ];
