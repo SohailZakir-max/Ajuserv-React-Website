@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { config, getAbsoluteUrl } from "../utils/config";
 
 interface SEOProps {
   title?: string;
@@ -36,7 +37,13 @@ export default function SEO({
     : defaultSEO.title;
   const seoDescription = description || defaultSEO.description;
   const seoKeywords = keywords || defaultSEO.keywords;
-  const seoImage = image || defaultSEO.image;
+
+  // Convert image to absolute URL if it's a relative path
+  const imageUrl = image || defaultSEO.image;
+  const seoImage = imageUrl.startsWith('http')
+    ? imageUrl
+    : getAbsoluteUrl(imageUrl);
+
   const seoUrl = url || defaultSEO.url;
   const seoType = type || defaultSEO.type;
 
@@ -45,8 +52,8 @@ export default function SEO({
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "Ajuserv",
-    url: "https://ajuserv.com",
-    logo: "https://ajuserv.com/images/logo.png",
+    url: config.siteUrl,
+    logo: getAbsoluteUrl("/images/logo.png"),
     description: defaultSEO.description,
     sameAs: [
       "https://www.linkedin.com/company/ajuserv",
@@ -106,6 +113,11 @@ export default function SEO({
   );
 }
 
+// Helper function to get page URL
+const getPageUrl = (path: string = "") => {
+  return `${config.siteUrl}${path}`;
+};
+
 // Export SEO data for different pages
 export const pageSEO = {
   home: {
@@ -114,7 +126,7 @@ export const pageSEO = {
       "Ajuserv delivers AI-powered enterprise platforms and digital transformation services. Transform your business with our innovative solutions including Coursify, Finlink, Qualvo, and Facentra.",
     keywords:
       "AI solutions, enterprise software, digital transformation, Ajuserv, AI platforms, business automation, enterprise AI, digital innovation",
-    url: "https://ajuserv.com",
+    url: getPageUrl(),
   },
   platforms: {
     title: "Enterprise Products",
@@ -122,7 +134,7 @@ export const pageSEO = {
       "Explore Ajuserv's AI-powered enterprise products: Coursify (Smart Learning), Finlink (Digital Lending), Qualvo (Autonomous Testing), and Facentra (Workforce Management).",
     keywords:
       "Coursify, Finlink, Qualvo, Facentra, AI platforms, enterprise products, learning management, digital lending, test automation, workforce management",
-    url: "https://ajuserv.com/platforms",
+    url: getPageUrl("/platforms"),
   },
   services: {
     title: "Our Services",
@@ -130,7 +142,7 @@ export const pageSEO = {
       "Comprehensive IT services including AI & GenAI, Data & Cloud, Full Stack Development, E-Learning, Infrastructure & Security, Low Code/No Code, and Staff Augmentation.",
     keywords:
       "AI services, GenAI, data engineering, cloud services, full stack development, e-learning solutions, IT security, low code, no code, staff augmentation",
-    url: "https://ajuserv.com/services",
+    url: getPageUrl("/services"),
   },
   solutions: {
     title: "Solutions",
@@ -138,7 +150,7 @@ export const pageSEO = {
       "Industry-specific solutions powered by AI and digital transformation. Custom enterprise solutions for banking, education, healthcare, and more.",
     keywords:
       "enterprise solutions, industry solutions, AI solutions, digital solutions, custom software, business solutions",
-    url: "https://ajuserv.com/solutions",
+    url: getPageUrl("/solutions"),
   },
   about: {
     title: "About Us",
@@ -146,7 +158,7 @@ export const pageSEO = {
       "Learn about Ajuserv - a technology company specializing in AI-powered enterprise solutions. Our mission is to empower enterprises with intelligent technology.",
     keywords:
       "about Ajuserv, AI company, enterprise technology, digital transformation company, tech company India",
-    url: "https://ajuserv.com/about",
+    url: getPageUrl("/about"),
   },
   contact: {
     title: "Contact Us",
@@ -154,21 +166,21 @@ export const pageSEO = {
       "Get in touch with Ajuserv for AI-powered enterprise solutions and digital transformation services. Contact our team for consultations and inquiries.",
     keywords:
       "contact Ajuserv, AI consultation, enterprise solutions inquiry, digital transformation contact",
-    url: "https://ajuserv.com/contact",
+    url: getPageUrl("/contact"),
   },
   privacyPolicy: {
     title: "Privacy Policy",
     description:
       "Ajuserv's privacy policy - Learn how we collect, use, and protect your personal information.",
     keywords: "privacy policy, data protection, Ajuserv privacy",
-    url: "https://ajuserv.com/privacy-policy",
+    url: getPageUrl("/privacy-policy"),
   },
   termsOfService: {
     title: "Terms of Service",
     description:
       "Ajuserv's terms of service - Read our terms and conditions for using our services and platforms.",
     keywords: "terms of service, terms and conditions, Ajuserv terms",
-    url: "https://ajuserv.com/terms-of-service",
+    url: getPageUrl("/terms-of-service"),
   },
   // Product pages
   finlink: {
@@ -177,7 +189,7 @@ export const pageSEO = {
       "Finlink enables real-time financial data access, AI-driven underwriting, and instant credit decisioning using Account Aggregator ecosystem. 10x faster loan approvals.",
     keywords:
       "Finlink, digital lending, AI underwriting, credit scoring, loan automation, Account Aggregator, fintech platform",
-    url: "https://ajuserv.com/platforms/finlink",
+    url: getPageUrl("/platforms/finlink"),
   },
   coursify: {
     title: "Coursify - AI-Enabled Smart Learning Platform",
@@ -185,7 +197,7 @@ export const pageSEO = {
       "Coursify delivers adaptive, AI-driven learning experiences with personalized paths, gamification, and real-time analytics. 2x learner engagement.",
     keywords:
       "Coursify, e-learning platform, AI learning, LMS, learning management system, adaptive learning, corporate training",
-    url: "https://ajuserv.com/platforms/coursify",
+    url: getPageUrl("/platforms/coursify"),
   },
   qualvo: {
     title: "Qualvo - AI-Driven Autonomous Testing Platform",
@@ -193,7 +205,7 @@ export const pageSEO = {
       "Qualvo automates testing with AI-powered test generation and self-healing capabilities. 70% reduced QA effort and 3x faster releases.",
     keywords:
       "Qualvo, test automation, AI testing, QA automation, self-healing tests, regression testing, CI/CD testing",
-    url: "https://ajuserv.com/platforms/Qualvo",
+    url: getPageUrl("/platforms/Qualvo"),
   },
   facentra: {
     title: "Facentra - Face Recognition Workforce Management",
@@ -201,7 +213,7 @@ export const pageSEO = {
       "Facentra provides secure, location-aware workforce management using face recognition and geofencing. 100% attendance authenticity.",
     keywords:
       "Facentra, face recognition, workforce management, attendance system, geofencing, employee tracking, biometric attendance",
-    url: "https://ajuserv.com/platforms/facentra",
+    url: getPageUrl("/platforms/facentra"),
   },
   // Service pages
   fullstackDevelopment: {
@@ -210,7 +222,7 @@ export const pageSEO = {
       "End-to-end web and mobile application development with React, Angular, Django, and React Native. Expert full stack developers for your projects.",
     keywords:
       "full stack development, React development, Angular development, Django, React Native, web development, mobile app development",
-    url: "https://ajuserv.com/services/fullstack-development",
+    url: getPageUrl("/services/fullstack-development"),
   },
   aiGenai: {
     title: "AI & GenAI Services",
@@ -218,7 +230,7 @@ export const pageSEO = {
       "Leverage cutting-edge AI and generative AI for automation, insights, and intelligent solutions. Machine learning, NLP, computer vision, and predictive analytics.",
     keywords:
       "AI services, GenAI, generative AI, machine learning, NLP, computer vision, predictive analytics, AI automation",
-    url: "https://ajuserv.com/services/ai-genai",
+    url: getPageUrl("/services/ai-genai"),
   },
   dataCloud: {
     title: "Data & Cloud Services",
@@ -226,7 +238,7 @@ export const pageSEO = {
       "Modern data architecture and cloud solutions for scalable, secure operations. Data engineering, cloud migration, data lakes, and real-time analytics.",
     keywords:
       "data engineering, cloud services, cloud migration, data lakes, data warehouse, real-time analytics, AWS, Azure, GCP",
-    url: "https://ajuserv.com/services/data-cloud",
+    url: getPageUrl("/services/data-cloud"),
   },
   infraSecurity: {
     title: "Infrastructure & Security Services",
@@ -234,7 +246,7 @@ export const pageSEO = {
       "Robust infrastructure and security solutions. DevSecOps, cloud security, compliance automation, and 24/7 monitoring.",
     keywords:
       "infrastructure services, IT security, DevSecOps, cloud security, compliance automation, cybersecurity, monitoring",
-    url: "https://ajuserv.com/services/infra-security",
+    url: getPageUrl("/services/infra-security"),
   },
   elearning: {
     title: "E-Learning Solutions",
@@ -242,7 +254,7 @@ export const pageSEO = {
       "Comprehensive digital learning solutions for employee training and education. LMS implementation, content development, and learning analytics.",
     keywords:
       "e-learning, LMS, learning management, corporate training, online learning, educational technology, content development",
-    url: "https://ajuserv.com/services/elearning",
+    url: getPageUrl("/services/elearning"),
   },
   lowcodeNocode: {
     title: "Low Code / No Code Development",
@@ -250,7 +262,7 @@ export const pageSEO = {
       "Accelerate development with low-code platforms for rapid application delivery. Platform selection, app development, and integration services.",
     keywords:
       "low code, no code, rapid development, citizen development, Power Platform, OutSystems, Mendix",
-    url: "https://ajuserv.com/services/lowcode-nocode",
+    url: getPageUrl("/services/lowcode-nocode"),
   },
   workplaceTransformation: {
     title: "Workplace Transformation Services",
@@ -258,7 +270,7 @@ export const pageSEO = {
       "Modernize your workplace with digital tools and collaborative platforms. Microsoft 365, collaboration tools, and process automation.",
     keywords:
       "workplace transformation, Microsoft 365, digital workplace, collaboration tools, process automation, change management",
-    url: "https://ajuserv.com/services/workplace-transformation",
+    url: getPageUrl("/services/workplace-transformation"),
   },
   staffAugmentation: {
     title: "Staff Augmentation Services",
@@ -266,6 +278,6 @@ export const pageSEO = {
       "Scale your teams with skilled IT professionals across technologies. Technical talent, project teams, and managed services.",
     keywords:
       "staff augmentation, IT staffing, technical talent, project teams, managed services, IT consulting",
-    url: "https://ajuserv.com/services/staff-augmentation",
+    url: getPageUrl("/services/staff-augmentation"),
   },
 };
