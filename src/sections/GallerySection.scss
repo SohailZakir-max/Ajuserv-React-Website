@@ -3,8 +3,12 @@
 
 // ZEBRA: GREY SECTION
 .gallery-section {
-  @include section;
+  padding: $spacing-xl $spacing-lg;
   background: $gray-100;
+
+  @include md {
+    padding: $spacing-2xl $spacing-2xl;
+  }
 
   &__container {
     @include container;
@@ -12,16 +16,16 @@
 
   &__header {
     text-align: center;
-    margin-bottom: $spacing-2xl;
+    margin-bottom: $spacing-lg;
 
     .badge {
       @include badge;
-      margin-bottom: $spacing-md;
+      margin-bottom: $spacing-sm;
     }
 
     h2 {
       @include heading-lg;
-      margin-bottom: $spacing-sm;
+      margin-bottom: $spacing-xs;
     }
 
     p {
@@ -53,7 +57,7 @@
 
   &__slide {
     min-width: 100%;
-    height: 350px;
+    height: 320px;
     position: relative;
     background: $white;
 

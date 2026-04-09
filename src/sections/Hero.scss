@@ -104,6 +104,97 @@
     }
   }
 
+  // Stats section for the hero panel
+  &__panel-stats {
+    display: flex;
+    gap: $spacing-lg;
+    margin-top: $spacing-lg;
+    pointer-events: none;
+
+    @include lg {
+      gap: $spacing-xl;
+      margin-top: $spacing-xl;
+    }
+  }
+
+  &__stat {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    &-value {
+      font-size: $font-size-xl;
+      font-weight: 700;
+      color: $white;
+      line-height: 1;
+
+      @include lg {
+        font-size: $font-size-3xl;
+      }
+    }
+
+    &-label {
+      font-size: $font-size-xs;
+      color: rgba($white, 0.8);
+      margin-top: $spacing-xs;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+
+      @include lg {
+        font-size: $font-size-sm;
+      }
+    }
+  }
+
+  // Highlights section for products/services
+  &__panel-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-sm;
+    margin-top: $spacing-lg;
+    padding: 0;
+    list-style: none;
+    pointer-events: none;
+
+    @include lg {
+      gap: $spacing-md;
+      margin-top: $spacing-xl;
+    }
+
+    li {
+      display: inline-flex;
+      align-items: center;
+      padding: $spacing-xs $spacing-md;
+      background: rgba($white, 0.15);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba($white, 0.25);
+      border-radius: $radius-full;
+      color: $white;
+      font-size: $font-size-xs;
+      font-weight: 500;
+
+      @include lg {
+        padding: $spacing-sm $spacing-lg;
+        font-size: $font-size-sm;
+      }
+
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        background: $accent;
+        border-radius: 50%;
+        margin-right: $spacing-sm;
+
+        @include lg {
+          width: 8px;
+          height: 8px;
+        }
+      }
+    }
+  }
+
   &__panel-label {
     position: absolute;
     inset: 0;
@@ -177,6 +268,37 @@
       }
     }
 
+    &__panel-stats {
+      gap: $spacing-md;
+      margin-top: $spacing-md;
+    }
+
+    &__stat {
+      &-value {
+        font-size: $font-size-lg;
+      }
+
+      &-label {
+        font-size: 10px;
+      }
+    }
+
+    &__panel-highlights {
+      gap: $spacing-xs;
+      margin-top: $spacing-md;
+
+      li {
+        padding: $spacing-xs $spacing-sm;
+        font-size: $font-size-xs;
+
+        &::before {
+          width: 5px;
+          height: 5px;
+          margin-right: $spacing-xs;
+        }
+      }
+    }
+
     &__panel-label {
       background: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.3) 100%);
       justify-content: flex-start;
@@ -215,6 +337,38 @@
 
       p {
         font-size: $font-size-xs;
+      }
+    }
+
+    &__panel-stats {
+      gap: $spacing-sm;
+      margin-top: $spacing-sm;
+    }
+
+    &__stat {
+      &-value {
+        font-size: $font-size-base;
+      }
+
+      &-label {
+        font-size: 9px;
+        margin-top: 2px;
+      }
+    }
+
+    &__panel-highlights {
+      gap: 4px;
+      margin-top: $spacing-sm;
+
+      li {
+        padding: 4px $spacing-xs;
+        font-size: 10px;
+
+        &::before {
+          width: 4px;
+          height: 4px;
+          margin-right: 4px;
+        }
       }
     }
 
@@ -258,6 +412,26 @@
       p {
         font-size: 11px;
       }
+    }
+
+    &__panel-stats {
+      gap: $spacing-xs;
+      margin-top: $spacing-xs;
+    }
+
+    &__stat {
+      &-value {
+        font-size: $font-size-sm;
+      }
+
+      &-label {
+        font-size: 8px;
+        margin-top: 1px;
+      }
+    }
+
+    &__panel-highlights {
+      display: none; // Hide highlights on very small screens to save space
     }
 
     &__panel-label {

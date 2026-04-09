@@ -20,14 +20,14 @@
 
   &__container {
     @include container;
-    padding-top: $spacing-2xl;
-    padding-bottom: $spacing-md;
+    padding-top: $spacing-xl;
+    padding-bottom: $spacing-sm;
   }
 
   &__main {
     display: grid;
-    gap: $spacing-xl;
-    margin-bottom: $spacing-xl;
+    gap: $spacing-lg;
+    margin-bottom: $spacing-lg;
 
     @include md {
       grid-template-columns: 1.5fr 2fr;
@@ -39,7 +39,7 @@
 
     p {
       color: rgba($white, 0.7);
-      margin-bottom: $spacing-lg;
+      margin-bottom: $spacing-md;
       line-height: $leading-relaxed;
     }
   }
@@ -47,7 +47,7 @@
   &__logo {
     display: flex;
     align-items: center;
-    margin-bottom: $spacing-lg;
+    margin-bottom: $spacing-md;
     text-decoration: none;
   }
 
@@ -90,7 +90,7 @@
 
   &__links {
     display: grid;
-    gap: $spacing-xl;
+    gap: $spacing-lg;
 
     @include sm {
       grid-template-columns: repeat(3, 1fr);
@@ -125,8 +125,8 @@
   &__bottom {
     display: flex;
     flex-direction: column;
-    gap: $spacing-md;
-    padding-top: $spacing-xl;
+    gap: $spacing-sm;
+    padding-top: $spacing-md;
     border-top: 1px solid rgba($white, 0.1);
 
     @include md {

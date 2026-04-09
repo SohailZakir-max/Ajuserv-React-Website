@@ -2,6 +2,7 @@ import { type ReactNode } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Hero, { type HeroItem } from "../sections/Hero";
+import SEO, { pageSEO } from "../components/SEO";
 import "./Services.scss";
 
 // Import service images
@@ -142,6 +143,7 @@ const iconComponents: { [key: string]: ReactNode } = {
 export default function Services() {
   return (
     <div className="services-page">
+      <SEO {...pageSEO.services} />
       {/* Hero Accordion Section */}
       <Hero items={serviceHeroItems} imageAlign="left" />
 

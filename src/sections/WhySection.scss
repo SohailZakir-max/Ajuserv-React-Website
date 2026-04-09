@@ -3,9 +3,13 @@
 
 // ZEBRA: GREY SECTION
 .why-section {
-  @include section;
+  padding: $spacing-xl $spacing-lg;
   background: $gray-100;
   position: relative;
+
+  @include md {
+    padding: $spacing-2xl $spacing-2xl;
+  }
 
   &__container {
     @include container;
@@ -13,16 +17,16 @@
 
   &__header {
     text-align: center;
-    margin-bottom: $spacing-2xl;
+    margin-bottom: $spacing-lg;
 
     .badge {
       @include badge;
-      margin-bottom: $spacing-md;
+      margin-bottom: $spacing-sm;
     }
 
     h2 {
       @include heading-lg;
-      margin-bottom: $spacing-sm;
+      margin-bottom: $spacing-xs;
     }
 
     p {
@@ -33,7 +37,7 @@
 
   &__grid {
     display: grid;
-    gap: $spacing-lg;
+    gap: $spacing-md;
 
     @include md {
       grid-template-columns: repeat(2, 1fr);
@@ -48,7 +52,7 @@
 .why-card {
   @include card;
   text-align: center;
-  padding: $spacing-xl $spacing-lg;
+  padding: $spacing-lg $spacing-md;
   position: relative;
   overflow: hidden;
 
@@ -58,7 +62,7 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 4px;
+    height: 3px;
     background: $primary;
     transform: scaleX(0);
     transition: transform $transition-base;
@@ -69,16 +73,16 @@
   }
 
   &__icon {
-    width: 64px;
-    height: 64px;
-    margin: 0 auto $spacing-lg;
-    border-radius: $radius-xl;
+    width: 52px;
+    height: 52px;
+    margin: 0 auto $spacing-md;
+    border-radius: $radius-lg;
     @include flex-center;
     transition: all $transition-base;
 
     svg {
-      width: 28px;
-      height: 28px;
+      width: 24px;
+      height: 24px;
       transition: all $transition-base;
     }
   }

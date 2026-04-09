@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import type { Product } from "../data/products";
 import type { ServiceDetail } from "../data/services";
+import SEO from "../components/SEO";
 import "./ProductPage.scss";
 
 // Import product background images
@@ -43,8 +44,36 @@ interface ProductPageProps {
 export default function ProductPage({ product }: ProductPageProps) {
   const productImage = productImages[product.name];
 
+  // Generate dynamic SEO data based on product
+  const seoData = {
+    title: `${product.name} - ${product.tagline}`,
+    description: product.solution,
+    keywords: `${product.name}, ${product.features.join(", ")}, Ajuserv, enterprise solutions`,
+  };
+
+  // Generate structured data for product/service
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    description: product.solution,
+    brand: {
+      "@type": "Brand",
+      name: "Ajuserv",
+    },
+    offers: {
+      "@type": "Offer",
+      availability: "https://schema.org/InStock",
+      priceCurrency: "USD",
+      price: "0",
+      priceValidUntil: "2025-12-31",
+      url: `https://ajuserv.com/contact`,
+    },
+  };
+
   return (
     <div className="product-page">
+      <SEO {...seoData} structuredData={structuredData} />
       {/* Hero Section */}
       <section
         className="product-hero"

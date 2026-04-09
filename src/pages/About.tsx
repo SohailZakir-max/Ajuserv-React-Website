@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import SEO, { pageSEO } from "../components/SEO";
 import "./About.scss";
 
 const values = [
@@ -35,6 +36,7 @@ const stats = [
 export default function About() {
   return (
     <div className="about-page">
+      <SEO {...pageSEO.about} />
       {/* Hero Section */}
       <section className="about-hero">
         <div className="about-hero__content">

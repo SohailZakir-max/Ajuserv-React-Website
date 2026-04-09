@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { platforms } from "../data/platforms";
 import { products } from "../data/products";
 import Hero, { type HeroItem } from "../sections/Hero";
+import SEO, { pageSEO } from "../components/SEO";
 import "./Platforms.scss";
 
 // Import product images
@@ -102,6 +103,7 @@ const gradients: { [key: string]: string } = {
 export default function Platforms() {
   return (
     <div className="platforms-page">
+      <SEO {...pageSEO.platforms} />
       {/* Hero Accordion Section */}
       <Hero items={platformHeroItems} />
 

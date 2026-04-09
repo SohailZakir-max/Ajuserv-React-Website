@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
+import SEO, { pageSEO } from "../components/SEO";
 import "./Legal.scss";
 
 export default function TermsOfService() {
   return (
     <div className="legal-page">
+      <SEO {...pageSEO.termsOfService} />
       <section className="legal-hero">
         <div className="legal-hero__content">
           <motion.div

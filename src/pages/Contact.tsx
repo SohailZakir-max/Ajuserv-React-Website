@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { Icon } from "leaflet";
 import emailjs from "@emailjs/browser";
+import SEO, { pageSEO } from "../components/SEO";
 import "leaflet/dist/leaflet.css";
 import "./Contact.scss";
 
@@ -83,6 +84,7 @@ export default function Contact() {
 
   return (
     <div className="contact-page">
+      <SEO {...pageSEO.contact} />
       <section className="contact-page__hero">
         <div className="contact-page__hero-bg" />
         <motion.div

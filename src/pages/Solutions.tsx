@@ -2,6 +2,7 @@ import { type ReactNode } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Hero, { type HeroItem } from "../sections/Hero";
+import SEO, { pageSEO } from "../components/SEO";
 import "./Solutions.scss";
 
 // Import solution images
@@ -128,6 +129,7 @@ const iconComponents: { [key: string]: ReactNode } = {
 export default function Solutions() {
   return (
     <div className="solutions-page">
+      <SEO {...pageSEO.solutions} />
       {/* Hero Accordion Section */}
       <Hero items={solutionHeroItems} />
 
